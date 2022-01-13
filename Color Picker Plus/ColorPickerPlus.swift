@@ -62,7 +62,7 @@ public class ColorPickerPlus: NSColorPicker, NSColorPickingCustom {
             ColorPickerPlus.shared = self
             
             let pickerNibName = "ColorPickerPlus"
-            guard bundle.loadNibNamed(NSNib.Name(rawValue: pickerNibName), owner: self, topLevelObjects: nil) else {
+            guard bundle.loadNibNamed(pickerNibName, owner: self, topLevelObjects: nil) else {
                 Logger.error(message: "Could not find nib named \(pickerNibName)")
                 fatalError()
             }
@@ -122,7 +122,7 @@ public class ColorPickerPlus: NSColorPicker, NSColorPickingCustom {
     private let bundle = Bundle(for: ColorPickerPlus.self)
     
     public override var provideNewButtonImage: NSImage {
-        let icon = bundle.image(forResource: NSImage.Name(rawValue: "ToolbarIcon"))!
+        let icon = bundle.image(forResource: "ToolbarIcon")!
         return icon
     }
     

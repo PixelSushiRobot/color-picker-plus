@@ -17,7 +17,7 @@ class ColorRepresentingTextField: NSTextField, NSTextFieldDelegate {
         self.delegate = self
     }
     
-    override func controlTextDidChange(_ obj: Notification) {
+    func controlTextDidChange(_ obj: Notification) {
         Logger.debug(message: "Text field changed")
         
         if isHexField  {
